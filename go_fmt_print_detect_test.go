@@ -1,14 +1,14 @@
-package go_fmt_print_linter_test
+package gofmtprintlinter_test
 
 import (
 	"testing"
 
-	"github.com/olibaa/go_fmt_print_linter"
+	"github.com/olibaa/gofmtprintlinter"
 
 	"golang.org/x/tools/go/analysis/analysistest"
 )
 
 func TestAnalyzer(t *testing.T) {
 	testdata := analysistest.TestData()
-	analysistest.Run(t, testdata, go_fmt_print_linter.Analyzer, "test_case_a", "test_case_b")
+	analysistest.Run(t, testdata, gofmtprintlinter.Analyzer, "test_case_a", "test_case_b")
 }

@@ -1,4 +1,4 @@
-package go_fmt_print_linter
+package gofmtprintlinter
 
 import (
 	"flag"
@@ -11,8 +11,8 @@ import (
 )
 
 const (
-	name = "go_fmt_print_linter"
-	doc  = "go_fmt_print_linter is a static analysis tool to detect `fmt.Print` or `fmt.Println` or `fmt.Printf`"
+	name = "gofmtprintlinter"
+	doc  = "gofmtprintlinter is a static analysis tool to detect `fmt.Print` or `fmt.Println` or `fmt.Printf`"
 )
 
 var Analyzer = &analysis.Analyzer{
@@ -55,7 +55,7 @@ func run(pass *analysis.Pass) (interface{}, error) {
 				}
 
 				if ident.Name == "fmt" && (fun.Sel.Name == "Print" || fun.Sel.Name == "Println" || fun.Sel.Name == "Printf") {
-					if cmaps.IgnorePos(x.Pos(), "go_fmt_print_linter") {
+					if cmaps.IgnorePos(x.Pos(), "gofmtprintlinter") {
 						return true
 					}
 					pass.Reportf(x.Pos(), "Did you forget to delete \"%s.%s\"? If you add it, please add an ignore comment.", ident.Name, fun.Sel.Name)

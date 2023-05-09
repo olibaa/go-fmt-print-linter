@@ -1,4 +1,4 @@
-module github.com/olibaa/go_fmt_print_linter
+module github.com/olibaa/gofmtprintlinter
 
 go 1.20
 
